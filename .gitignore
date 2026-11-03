@@ -1,27 +1,55 @@
+# Build directories
 /build/
+/Build/
+/build-*/
 /cmake-build-*/
-/.cache/
 
 # CMake generated files
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
-compile_commands.json
 install_manifest.txt
+compile_commands.json
 Testing/
 
-# Compiled C and C++ artifacts
+# Compiled objects and libraries
 *.o
 *.obj
+*.slo
+*.lo
 *.a
+*.la
+*.lai
 *.lib
 *.so
+*.so.*
 *.dylib
 *.dll
-*.exe
-*.pdb
+*.mod
+*.smod
+*.gch
+*.pch
 
-# IDE and platform metadata
+# Executables and debug output
+*.exe
+*.out
+*.app
+*.pdb
+*.ilk
+*.dwo
+
+# Dependency and temporary files
+*.d
+*.tmp
+*.log
+*.bak
+*.swp
+
+# Local dependency installs and caches
+vcpkg_installed/
+/.cache/
+
+# IDE and operating system metadata
 *.user
 *.suo
 .DS_Store
