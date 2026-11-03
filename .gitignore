@@ -1,0 +1,28 @@
+/build/
+/cmake-build-*/
+/.cache/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+install_manifest.txt
+Testing/
+
+# Compiled C and C++ artifacts
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.pdb
+
+# IDE and platform metadata
+*.user
+*.suo
+.DS_Store
+Thumbs.db
