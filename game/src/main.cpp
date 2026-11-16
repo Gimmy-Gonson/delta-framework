@@ -21,7 +21,10 @@ int main() {
 
     Delta::Renderer renderer = {WIDTH, HEIGHT};
 
-    Delta::Rect rect = {{1.0f, 2.0f}, 100, 100};
+    Delta::Rect rect = {{200.0f, 100.0f}, 1002.0f, 100.0f, {0.0f, 0.0f, 0.0f, 0.0f}};
+    // Delta::Rect rect1 = {{0.0f, 0.0f}, 100.0f, 100.0f};
+    // Delta::Rect rect2 = {{100.0f, 500.0f}, 500.0f, 500.0f};
+    // Delta::Rect shrek = {{500.0f, 0.0f}, 100.0f, 200.0f};
 
     bool running = true;
     while (running) {
@@ -33,7 +36,11 @@ int main() {
         }
 
         renderer.clear(1.0f, 1.0f, 1.0f, 1.0f);
+
         renderer.drawRect(rect);
+        // renderer.drawRect(rect1);
+        // renderer.drawRect(rect2);
+        // renderer.drawRect(shrek);
 
         SDL_GL_SwapWindow(window);
     }
