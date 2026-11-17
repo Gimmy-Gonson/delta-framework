@@ -1,35 +1,38 @@
 #pragma once
 
 #include <glm/vec2.hpp>
-#include <vector>
+#include <glm/mat4x4.hpp>
 
 namespace Delta {
 struct Color {
-    float red;
-    float green;
-    float blue;
-    float alpha;
+    float red = 0.0f;
+    float green = 0.0f;
+    float blue = 0.0f;
+    float alpha = 1.0f;
 };
 
 struct Rect {
-    Rect(glm::vec2 position, float width, float height, Color tint);
-
-    inline static unsigned int VBO;
-    inline static unsigned int EBO;
-    inline static unsigned int VAO;
-
-    inline static std::vector<unsigned int> indices; /*= {{0, 1, 3, 1, 2, 3,}};*/
-
-private:
-    inline static std::vector<glm::vec2> rectVertices;
+    glm::vec2 position = {0.0f, 0.0f};
+    float width = 0.0f;
+    float height = 0.0f;
+    Color tint;
 };
 
 struct Renderer {
     Renderer(int viewportWidth, int viewportHeight);
-    void clear(float r, float g, float b, float a);
+    ~Renderer();
+    void clear(Color color);
     void drawRect(const Rect& rect);
 
 private:
-    unsigned int shaderProgram;
+    unsigned int shaderProgram = 0;
+
+    unsigned int VBO = 0;
+    unsigned int EBO = 0;
+    unsigned int VAO = 0;
+
+    int uTransform = -1;
+    int uColor = -1;
+    glm::mat4 projection = {1.0f};
 };
 } // namespace Delta
